@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>TMDB API Programming Test</title>
+
+<!-- Default Styles (DO NOT TOUCH) -->
+<link rel="stylesheet" type="text/css" href="/css/app.css">
+<!-- RequireJS // -->
+<script src="/vendor/requirejs/require.js" data-main="main"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="navbar nav">
+			<div class="container-fluid">
+				<div style="position: absolute; top: 0; left: 0; z-index: 50; font-size: 24px; margin-top: 24px; margin-left: 20px;">
+					<a href="#/" title="Start Over">The Big Screen</a>
+				</div>
+				<div class="pull-right" style="margin-top: 21px;">
+            		<!--<search /> -->
+        		</div>
+			</div>
+		</div>
+		<div class="contain">
+			<!-- BEGIN PAGE CONTENT -->
+			<div class="content">
+
+				<div protected-content>
+
+					<ng-view></ng-view>
+				</div>
+			</div>
+			<!-- END PAGE CONTENT -->
+		</div>
+	</div>
+
+	<!-- Default JS (DO NOT TOUCH) -->
+	<script src="/vendor/jquery/dist/jquery.min.js?bust=release.version"></script>
+	<script src="/vendor/bootstrap/dist/js/bootstrap.min.js?bust=release.version"></script>
+</body>
+</html>

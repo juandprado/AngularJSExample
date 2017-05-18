@@ -1,0 +1,35 @@
+{
+  "name": "The-Big-Screen",
+  "homepage": "https://github.com/juandprado/thebigscreen",
+  "author": "Juan Diego Prado <juandipra@gmail.com>",
+  "description": "Base framework for Cloud Insight UI Development.",
+  "bugs": {
+    "url": "https://algithub.pd.alertlogic.net/defender/al_ui_template/issues"
+  },
+  "scripts": {
+    "start": "ws -p 8888 -d src/main/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:juandprado/thebigscreen.git"
+  },
+  "version": "0.0.1",
+  "license": "MIT",
+  "engines": {
+    "node": "5.9.0"
+  },
+  "dependencies": {
+    "bower": "^1.7.9",
+    "cssmin": "^0.4.3",
+    "requirejs": "^2.2.0"
+  },
+  "folders": {
+    "build": "target/",
+    "builde2e": "targete2e/",
+    "translations": "po/",
+    "wwwRoot": "src/main/",
+    "jsSource": "src/main/",
+    "testRoot": "src/test/"
+  },
+  "devDependencies": {}
+}

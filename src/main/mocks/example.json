@@ -1,0 +1,12 @@
+{
+  "users": [
+    {
+      "id": "FA432305-107C-1005-84DB-06F3ABD9E1B8",
+      "created_on": "2015-03-04T21:17:24Z",
+      "active": true,
+      "name": "John Doe",
+      "email": "jdoe@alertlogic.com",
+      "changed_on": "2015-03-04T22:02:25Z"
+    }
+  ]
+}

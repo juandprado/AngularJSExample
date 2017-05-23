@@ -16,26 +16,29 @@
  */
 
 define( [ 'angular',
-          'config/config'],
-    function( angular, config) {
+          'config/config',
+          'tmdb/services/TMDBAPIService'],
+    function( angular, config, TMDBAPIService ) {
         "use strict";
 
-        var HomeController = function($scope) {
+        var HomeController = function($scope, TMDBAPIService ) {
 
             $scope.view   = {
-                movies: {results: ["holi", "mundo"]},
+                movies: [],
+                tvShows:[]
             };
 
-            /*
             var api = TMDBAPIService.Discover();
             api.discover.movies().then(function ( response ) {
                 $scope.view.movies = response.data;
             });
-            */
+            api.discover.tv().then(function(response) {
+                $scope.view.tvShows = response.data;
+            });
             
         };
 
-        HomeController.$inject = [ '$scope'];
+        HomeController.$inject = [ '$scope', 'TMDBAPIService' ];
 
         return HomeController;
     }

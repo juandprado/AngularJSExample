@@ -1,7 +1,15 @@
-<hgroup>
-	<h3> Hello madafakas </h3>
-</hgroup>
+<article>
+	<h4>{{apiURL}}</h4>
+	<h3>Relevant Movies</h3>
+	<ol>
+		<li ng-repeat="x in view.movies.results"><b>{{x.title}}</b> ({{x.popularity | number:0}}%)</li>
+	</ol>
+</article>
+<article>
+	<h3>Relevant TV Shows</h3>
+	<ol>
+		<li ng-repeat="x in view.tvShows.results"><b>{{x.name}}</b> ({{x.popularity | number:0}}%)</li>
+	</ol>
+</article>
 
-
-<popular-movies ng-model="view.movies.results" />
 

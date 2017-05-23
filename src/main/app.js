@@ -21,9 +21,9 @@
 define([ 'angular',
          'config/config',
          'ngRoute', 'ngResource', 'LocalStorageModule',
-         'tmdb/partials/home/HomeController'], 
+         'tmdb/partials/home/HomeController', 'tmdb/services/TMDBAPIService',], 
     function( angular, config, $resource, $location, LocalStorageModule, 
-              HomeController ) {
+              HomeController, TMDBAPIService ) {
     	"use strict";
 
         /** @constructs app */
@@ -38,6 +38,8 @@ define([ 'angular',
             $locationProvider.html5Mode(false);
             
     	}]);
+
+        app.service("TMDBAPIService", TMDBAPIService);
 
         app.controller( "HomeController", HomeController );
 

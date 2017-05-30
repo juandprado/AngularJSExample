@@ -1,12 +1,12 @@
 <article>
 	<h4>{{apiURL}}</h4>
-	<h3>Relevant Movies</h3>
+	<h3>Popular Movies</h3>
 	<ol>
-		<li ng-repeat="x in view.movies.results"><b>{{x.title}}</b> ({{x.popularity | number:0}}%)</li>
+		<li ng-repeat="x in view.movies.results"> <a href="/#/movie/{{x.id}}" style="color: #00008B"> <b>{{x.title}}</b> </a> ({{x.popularity | number:0}}%)</li>
 	</ol>
 </article>
 <article>
-	<h3>Relevant TV Shows</h3>
+	<h3>Popular TV Shows</h3>
 	<ol>
 		<li ng-repeat="x in view.tvShows.results"><b>{{x.name}}</b> ({{x.popularity | number:0}}%)</li>
 	</ol>

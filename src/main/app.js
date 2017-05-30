@@ -21,9 +21,10 @@
 define([ 'angular',
          'config/config',
          'ngRoute', 'ngResource', 'LocalStorageModule',
-         'tmdb/partials/home/HomeController', 'tmdb/services/TMDBAPIService',], 
+         'tmdb/partials/home/HomeController', 'tmdb/partials/movieDetailTwo/MovieDetailTwoController', 
+         'tmdb/services/TMDBAPIService', 'tmdb/directives/movieDetailTwo'], 
     function( angular, config, $resource, $location, LocalStorageModule, 
-              HomeController, TMDBAPIService ) {
+              HomeController, MovieDetailTwoController, TMDBAPIService, movieDetailTwoDirective ) {
     	"use strict";
 
         /** @constructs app */
@@ -43,9 +44,14 @@ define([ 'angular',
 
         app.controller( "HomeController", HomeController );
 
+        app.controller( "MovieDetailTwoController", MovieDetailTwoController );
+
+        app.directive( "movieDetailTwo", movieDetailTwoDirective );
+
 
         app.config(['$routeProvider', function($routeProvider) {
             $routeProvider.when( '/', { templateUrl: '/tmdb/partials/home/home.html', controller: 'HomeController' } );
+            $routeProvider.when( '/movie/:id', { templateUrl: '/tmdb/partials/movieDetailTwo/movieDetailTwo.html', controller: 'MovieDetailTwoController' } );
             $routeProvider.otherwise( {
                 template: function() {
                     throw 'An internal error occurred because the given path does not resolve to a known route.';

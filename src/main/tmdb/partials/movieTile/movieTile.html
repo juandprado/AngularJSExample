@@ -1,0 +1,10 @@
+<div style="float: left; margin: 10px;">
+	<a href="#/movie/{{ movie.id }}"
+		title="{{ movie.title }}"
+		ng-if="movie.poster_path">
+		<div>
+	    	<img src="{{view.images}}{{ movie.poster_path }}" width="150" />
+	    </div>
+	    <div>{{ movie.vote_average }}</div>
+	</a>
+</div>

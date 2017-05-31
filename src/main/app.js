@@ -22,9 +22,11 @@ define([ 'angular',
          'config/config',
          'ngRoute', 'ngResource', 'LocalStorageModule',
          'tmdb/partials/home/HomeController', 'tmdb/partials/movieDetailTwo/MovieDetailTwoController', 
-         'tmdb/services/TMDBAPIService', 'tmdb/directives/movieDetailTwo'], 
+         'tmdb/partials/movieTile/MovieTileController',
+         'tmdb/services/TMDBAPIService', 'tmdb/directives/movieDetailTwo', 'tmdb/directives/movieTile'], 
     function( angular, config, $resource, $location, LocalStorageModule, 
-              HomeController, MovieDetailTwoController, TMDBAPIService, movieDetailTwoDirective ) {
+              HomeController, MovieDetailTwoController, MovieTileController, TMDBAPIService, movieDetailTwoDirective,
+              movieTileDirective ) {
     	"use strict";
 
         /** @constructs app */
@@ -46,7 +48,11 @@ define([ 'angular',
 
         app.controller( "MovieDetailTwoController", MovieDetailTwoController );
 
+        app.controller( "MovieTileController", MovieTileController );
+
         app.directive( "movieDetailTwo", movieDetailTwoDirective );
+
+        app.directive( "movieTile", movieTileDirective );
 
 
         app.config(['$routeProvider', function($routeProvider) {

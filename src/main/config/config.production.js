@@ -32,6 +32,13 @@ define( [ 'angular' ],
             config.apiKey = '802cd9bec58e75474a66bfa717fd1106';
             config.apiImg = '//image.tmdb.org/t/p/w500';
 
+            /**
+             * TMDB API
+             */
+            config.apiUrl = '//www.googleapis.com/youtube/v3/';
+            config.ytApiKey = 'AIzaSyAg7hsLbORNhUuDYfMYtFvR5tReLOOcS0A';
+            config.apiImg = '//image.tmdb.org/t/p/w500';
+
             //  set to true to load automatically angular-mocks via requireJS and add ngMockE2E to angular module dependencies,
             //  remember that you then have to mock every $http request made by angular
             config.useMock = false;

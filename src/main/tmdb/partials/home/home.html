@@ -1,14 +1,14 @@
 <article>
 	<h3>Popular Movies</h3>
 <!-- 	<ol>
-		<li ng-repeat="x in view.movies.results"> <a href="/#/movie/{{x.id}}" style="color: #00008B"> <b>{{x.title}}</b> </a> ({{x.popularity | number:0}}%) <movie-tile ng-model="x"/></li>
+		<li ng-repeat="x in view.movies.results"> <a href="/#/movie/{{x.id}}" style="color: #00008B"> <b>{{x.title}}</b> </a> ({{x.popularity | number:0}}%)</li>
 	</ol> -->
 	<div ng-repeat="x in view.movies.results"> <movie-tile ng-model="x"> </movie-tile> </div>
 </article>
 
-<article>
+<!-- <article>
 	<h3>Popular TV Shows</h3>
 	<ol>
 		<li ng-repeat="x in view.tvShows.results"><b>{{x.name}}</b> ({{x.popularity | number:0}}%)</li>
 	</ol>
-</article>
+</article> -->

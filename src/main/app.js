@@ -23,9 +23,9 @@ define([ 'angular',
          'ngRoute', 'ngResource', 'LocalStorageModule',
          'tmdb/partials/home/HomeController', 'tmdb/partials/movieDetailTwo/MovieDetailTwoController', 
          'tmdb/partials/movieTile/MovieTileController',
-         'tmdb/services/TMDBAPIService', 'tmdb/directives/movieDetailTwo', 'tmdb/directives/movieTile'], 
+         'tmdb/services/TMDBAPIService', 'tmdb/services/YTAPIService', 'tmdb/directives/movieDetailTwo', 'tmdb/directives/movieTile'], 
     function( angular, config, $resource, $location, LocalStorageModule, 
-              HomeController, MovieDetailTwoController, MovieTileController, TMDBAPIService, movieDetailTwoDirective,
+              HomeController, MovieDetailTwoController, MovieTileController, TMDBAPIService, YTAPIService, movieDetailTwoDirective,
               movieTileDirective ) {
     	"use strict";
 
@@ -43,6 +43,8 @@ define([ 'angular',
     	}]);
 
         app.service("TMDBAPIService", TMDBAPIService);
+
+        app.service("YTAPIService", YTAPIService);
 
         app.controller( "HomeController", HomeController );
 

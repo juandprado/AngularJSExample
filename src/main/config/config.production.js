@@ -35,9 +35,8 @@ define( [ 'angular' ],
             /**
              * TMDB API
              */
-            config.apiUrl = '//www.googleapis.com/youtube/v3/';
+            config.ytApiUrl = '//www.googleapis.com/youtube/';
             config.ytApiKey = 'AIzaSyAg7hsLbORNhUuDYfMYtFvR5tReLOOcS0A';
-            config.apiImg = '//image.tmdb.org/t/p/w500';
 
             //  set to true to load automatically angular-mocks via requireJS and add ngMockE2E to angular module dependencies,
             //  remember that you then have to mock every $http request made by angular

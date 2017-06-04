@@ -20,26 +20,30 @@ define( [ 'angular',
           'ngRoute',
           'config/config',
           'tmdb/services/YTAPIService'],
-    function( angular, $routeParams, config, YTAPIService ) {
+    function( angular, config, YTAPIService ) {
         "use strict";
 
-        var TrailerController = function($scope, YTAPIService, $routeParams ) {
+        var TrailerController = function($scope, YTAPIService) {
 
             $scope.view   = {
-                trailer: {},
+                trailer: undefined,
                 path: ""
             };
 
-            $scope.movie = "";
+
+            console.log($scope.movie);
             
-            var api = YTPIService.Video();
-            api.video.video($scope.movie).then( function ( response ) {
-                $scope.view.trailer = response.data;
+            var api = YTAPIService.Video();
+            console.log("Holi1");
+            api.video.video($scope.movie + " trailer").then( function ( response ) {
+                console.log("Holi2");
+                $scope.view.trailer = "https://www.youtube.com/watch?v=" + response.data.items[0].id.videoId;
+                console.log($scope.view.trailer);
             });
 
         };
 
-        MovieController.$inject = [ '$scope', 'YTAPIService', '$routeParams' ];
+        TrailerController.$inject = [ '$scope', 'YTAPIService'];
 
         return TrailerController;
     }

@@ -36,13 +36,15 @@ define( [ 'angular',
 
                     /* http://docs.themoviedb.apiary.io/reference/movies/movieid */
                     var getMovie = function ( movie ) {
-                        var uri = serviceBase.url + '/search?q=' + video + '&maxResults=1&part=snippet&key=' + serviceBase.apiKey;
-                        return $http.get( uri );
+                        
+                        var uri = serviceBase.url + '/search?q=' + movie + '&maxResults=1&part=snippet&key=' + serviceBase.apiKey;
+                        console.log("https:" + uri);
+                        return $http.get( "https:" + uri );
                     };
 
                     return {
                         video: {
-                            movie: video
+                            video: getMovie
                         }
                     };
                 });
@@ -73,8 +75,8 @@ define( [ 'angular',
             };
         };
 
-        TMDBAPIService.$inject = [ '$rootScope', '$http', '$timeout', '$resource', 'localStorageService', '$location' ];
+        YTAPIService.$inject = [ '$rootScope', '$http', '$timeout', '$resource', 'localStorageService', '$location' ];
 
-        return TMDBAPIService;
+        return YTAPIService;
 }
 );

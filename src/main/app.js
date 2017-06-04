@@ -22,11 +22,11 @@ define([ 'angular',
          'config/config',
          'ngRoute', 'ngResource', 'LocalStorageModule',
          'tmdb/partials/home/HomeController', 'tmdb/partials/movieDetailTwo/MovieDetailTwoController', 
-         'tmdb/partials/movieTile/MovieTileController',
-         'tmdb/services/TMDBAPIService', 'tmdb/services/YTAPIService', 'tmdb/directives/movieDetailTwo', 'tmdb/directives/movieTile'], 
+         'tmdb/partials/movieTile/MovieTileController', 'tmdb/partials/trailer/TrailerController',
+         'tmdb/services/TMDBAPIService', 'tmdb/services/YTAPIService', 'tmdb/directives/movieDetailTwo', 'tmdb/directives/movieTile', 'tmdb/directives/trailer'], 
     function( angular, config, $resource, $location, LocalStorageModule, 
-              HomeController, MovieDetailTwoController, MovieTileController, TMDBAPIService, YTAPIService, movieDetailTwoDirective,
-              movieTileDirective ) {
+              HomeController, MovieDetailTwoController, MovieTileController, TrailerController, TMDBAPIService, YTAPIService, movieDetailTwoDirective,
+              movieTileDirective, trailerDirective ) {
     	"use strict";
 
         /** @constructs app */
@@ -52,9 +52,13 @@ define([ 'angular',
 
         app.controller( "MovieTileController", MovieTileController );
 
+        app.controller( "TrailerController", TrailerController );
+
         app.directive( "movieDetailTwo", movieDetailTwoDirective );
 
         app.directive( "movieTile", movieTileDirective );
+
+        app.directive( "trailer", trailerDirective );
 
 
         app.config(['$routeProvider', function($routeProvider) {

@@ -10,7 +10,6 @@ define( [ 'angular',
             $scope.view   = {
                 images: config.apiImg
             };
-            console.log('movie tile');
         };
 
         MovieTileController.$inject = [ '$scope', 'TMDBAPIService', '$routeParams' ];

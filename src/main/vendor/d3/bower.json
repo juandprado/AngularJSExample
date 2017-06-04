@@ -1,7 +1,24 @@
 {
   "name": "d3",
-  "description": "A JavaScript visualization library for HTML and SVG.",
+  "version": "3.4.13",
   "main": "d3.js",
-  "license": "BSD-3-Clause",
-  "ignore": []
+  "scripts": [
+    "d3.js"
+  ],
+  "ignore": [
+    ".DS_Store",
+    ".git",
+    ".gitignore",
+    ".npmignore",
+    ".travis.yml",
+    "Makefile",
+    "bin",
+    "component.json",
+    "index.js",
+    "lib",
+    "node_modules",
+    "package.json",
+    "src",
+    "test"
+  ]
 }

@@ -30,15 +30,10 @@ define( [ 'angular',
                 path: ""
             };
 
-
-            console.log($scope.movie);
             
             var api = YTAPIService.Video();
-            console.log("Holi1");
-            api.video.video($scope.movie + " trailer").then( function ( response ) {
-                console.log("Holi2");
-                $scope.view.trailer = "https://www.youtube.com/watch?v=" + response.data.items[0].id.videoId;
-                console.log($scope.view.trailer);
+            api.video.video($scope.movie + " trailer subtitulado").then( function ( response ) {
+                $scope.view.trailer = "https://www.youtube.com/embed/" + response.data.items[0].id.videoId;
             });
 
         };

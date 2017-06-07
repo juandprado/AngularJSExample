@@ -81,7 +81,6 @@ define( [ 'angular',
                     /* http://docs.themoviedb.apiary.io/reference/movies/movieid */
                     var getMovie = function ( movie ) {
                         var uri = serviceBase.url + '/movie/' + movie + '?api_key=' + serviceBase.apiKey + '&append_to_response=alternative_titles,credits,releases,videos,similar,reviews,images';
-                        console.log(uri);
                         return $http.get( uri );
                     };
 

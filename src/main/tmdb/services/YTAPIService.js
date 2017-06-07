@@ -38,7 +38,6 @@ define( [ 'angular',
                     var getMovie = function ( movie ) {
                         
                         var uri = serviceBase.url + '/search?q=' + movie + '&maxResults=1&part=snippet&key=' + serviceBase.apiKey;
-                        console.log("https:" + uri);
                         return $http.get( "https:" + uri );
                     };
 

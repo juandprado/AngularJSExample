@@ -1,13 +1,21 @@
 <div>
 
-    <div class="col-md-4">
-
-        <h1>{{ view.details.title }}</h1>
-        <h2>{{ view.details.original_language }}</h2>
-        <div ng-if="view.details.title">
-        	<trailer ng-model="view.details.title"> </trailer>
-        </div>
-
-    </div>
-
+    <div class="col-md-6">
+    	<hgroup>
+	        <h1>{{ view.details.title }} ({{view.details.release_date | date: "yyyy"}})</h1>
+	        <h5>{{view.details.runtime}} mins | <span ng-repeat="x in view.details.genres">{{x.name}}{{$last ? '' : ', '}} </span></h5>
+	        <div>
+	    		<img src="{{view.images}}{{ view.details.poster_path }}" width="200" />
+	    	</div>
+	        <h4>{{ view.details.overview }}</h4>
+        </hgroup>
+        <!-- <p>{{view.details}}</p> -->
+        <h4 class="subtitle">Trailer Original</h4>
+        <div ng-repeat="result in view.details.videos.results|limitTo:1">
+   			<iframe id="ytplayer" type="text/html" width="640" height="360" ng-src="{{getIframeSrc(result.key)}}" frameborder="0"/>
+		</div>
+		<h4 class="subtitle">Trailer Subtitulado</h4>
+		<div ng-if="view.details.title">
+			<trailer ng-model="view.details.title"> </trailer>
+		</div>
 </div>

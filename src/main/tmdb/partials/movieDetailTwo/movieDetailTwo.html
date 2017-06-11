@@ -3,13 +3,21 @@
     <div class="col-md-6">
     	<hgroup>
 	        <h1>{{ view.details.title }} ({{view.details.release_date | date: "yyyy"}})</h1>
-	        <h5>{{view.details.runtime}} mins | <span ng-repeat="x in view.details.genres">{{x.name}}{{$last ? '' : ', '}} </span></h5>
+	        <h5>{{view.details.runtime}} mins | <span ng-repeat="x in view.details.genres">{{x.name}}{{$last ? '' : ', '}} </span> <span>| {{view.details.vote_average}}</span></h5>
 	        <div>
 	    		<img src="{{view.images}}{{ view.details.poster_path }}" width="200" />
 	    	</div>
 	        <h4>{{ view.details.overview }}</h4>
         </hgroup>
-        <!-- <p>{{view.details}}</p> -->
+        <h4 class="subtitle">Cast</h4>
+        <ul>
+        	<li ng-repeat="actor in view.details.credits.cast|limitTo:10"><b>{{actor.name}}</b> - {{actor.character}} ({{actor.id}})</li>
+        </ul>
+        <h4 class="subtitle">Crew</h4>
+        <ul>
+        	<li ng-repeat="worker in view.details.credits.crew|limitTo:10"><b>{{worker.name}}</b> - {{worker.job}} ({{worker.id}})</li>
+        </ul>
+        <p>{{view.details}}</p>
         <h4 class="subtitle">Trailer Original</h4>
         <div ng-repeat="result in view.details.videos.results|limitTo:1">
    			<iframe id="ytplayer" type="text/html" width="640" height="360" ng-src="{{getIframeSrc(result.key)}}" frameborder="0"/>
